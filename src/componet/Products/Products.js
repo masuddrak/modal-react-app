@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import SingelProduct from '../SingelProduct/SingelProduct';
 import './Products.css'
 
-const Products = () => {
+const Products = ({addedProduct}) => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products/')
+        fetch('fack.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -13,7 +13,10 @@ const Products = () => {
         <div className=''>
             <h2>Show All Products {products.length}</h2>
             <div>
-                <SingelProduct products={products}></SingelProduct>
+                <SingelProduct
+                 products={products}
+                 addedProduct={addedProduct}
+                ></SingelProduct>
             </div>
         </div>
     );
