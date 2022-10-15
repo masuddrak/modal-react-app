@@ -1,0 +1,7 @@
+.header{
+    list-style: none;
+    /* display: flex; */
+}
+.header li{
+    cursor: pointer;
+}
